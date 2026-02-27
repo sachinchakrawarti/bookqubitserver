@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// root
+app.get("/", (req, res) => {
+  res.send("BookQubit Server is running...");
+});
+
 // API V1 Routes
 app.use("/api/v1/publications", publicationsRoutes);
 
