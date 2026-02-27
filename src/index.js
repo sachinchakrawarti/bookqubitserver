@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// root
+// ⭐ ADD THIS ROUTE ⭐
 app.get("/", (req, res) => {
   res.send("BookQubit Server is running...");
 });
