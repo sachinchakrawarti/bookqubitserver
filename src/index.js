@@ -4,6 +4,8 @@ import express from "express";
 import cors from "cors";
 
 import publicationsRoutes from "./api/v1/publications/publicationsRoutes.js";
+import comicsRoutes from "./api/v1/comics/comics.routes.js";
+
 
 const app = express();
 app.use(cors());
@@ -16,6 +18,8 @@ app.get("/", (req, res) => {
 
 // API V1 Routes
 app.use("/api/v1/publications", publicationsRoutes);
+
+app.use("/api/v1/comics", comicsRoutes);
 
 const PORT = process.env.PORT || 3005;
 app.listen(PORT, () => {
