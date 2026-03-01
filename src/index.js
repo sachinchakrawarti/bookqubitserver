@@ -6,19 +6,17 @@ import cors from "cors";
 import publicationsRoutes from "./api/v1/publications/publicationsRoutes.js";
 import comicsRoutes from "./api/v1/comics/comics.routes.js";
 
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ⭐ ADD THIS ROUTE ⭐
+// Root Test Route
 app.get("/", (req, res) => {
   res.send("BookQubit Server is running...");
 });
 
 // API V1 Routes
 app.use("/api/v1/publications", publicationsRoutes);
-
 app.use("/api/v1/comics", comicsRoutes);
 
 const PORT = process.env.PORT || 3005;

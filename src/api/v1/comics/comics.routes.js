@@ -8,10 +8,12 @@ import {
 
 const router = express.Router();
 
-// Base route: /api/v1/comics
+// IMPORTANT: Specific routes FIRST
 router.get("/", getAllComics);
-router.get("/:id", getComicById);
 router.get("/category/:category", getComicsByCategory);
 router.get("/publisher/:publisher", getComicsByPublisher);
+
+// Dynamic route LAST
+router.get("/:id", getComicById);
 
 export default router;
